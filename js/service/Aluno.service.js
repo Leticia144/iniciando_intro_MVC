@@ -1,16 +1,16 @@
 class Alunoservice {
     constructor () {
-    this.alunos = []
+        this.alunos = []
     }
-    
-    add (aluno) {
+
+add (aluno) {
     if(!aluno instanceof AlunoModel) {
-    throw new Error('O aluno deve ser uma instância de AlunoModel')
+        throw new Error('O aluno deve ser uma instância de AlunoModel')
     }
-    this.aluno.push(aluno)
-    }
-    
-    update(aluno) {
+    this.alunos.push(aluno)
+}
+
+update(aluno) {
     return aluno
-    }
-    }
+}
+}
