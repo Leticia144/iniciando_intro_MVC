@@ -102,7 +102,10 @@
             />
           </div>
          
-          <div class="input-field col s4">
+          <div class="input-field col s12">
+            <a class="btn" href="index.html">
+              Cancelar
+            </a>
             <button class="btn" type="submit" name="action">
                 Cadastrar
               </button>
@@ -117,7 +120,9 @@
     <script src="js/Service/Aluno.service.js"></script>
 
     <script>
-      const alunos = [
+
+      
+      /*const alunos = [
         {
           nome: "Fulano Silva",
           notas: {
@@ -136,19 +141,14 @@
             ferramentas: [7, 7, 8, 9],
           },
         },
-      ];
+      ];*/
 
       const alunoService = new Alunoservice();
-      alunos.forEach((aluno) => {
-        alunoService.add(new AlunoModel(aluno));
-      });
       const paramsString = window.location.search;
-      console.log(paramsString);
       const URLParams = new URLSearchParams(paramsString);
       const alunoId = parseInt (URLParams.get("id"));
-      console.log(alunoId);
       let aluno = alunoService.searchById(alunoId);
-      console.log(aluno);
+        document.getElementById("first_name").value = aluno.nome;
 
     </script>
   </body>
