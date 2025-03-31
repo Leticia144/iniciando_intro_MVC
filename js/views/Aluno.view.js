@@ -13,7 +13,7 @@ class AlunoView {
         const htmlHeader = document.createElement('tr')
         htmlHeader.innerHTML = '<td>Nome</td>'
         const htmlHeaderMaterias = this.materias.map(materia => {
-            return <td>${materia}</td>
+            return `<td>${materia}</td>`
         }).join('')
     
         htmlHeader.innerHTML += htmlHeaderMaterias
@@ -27,7 +27,7 @@ class AlunoView {
         this.tableBody.innerHTML = ''
          alunos.forEach(aluno => {
             let htmlRow = document.createElement('tr')
-            htmlRow.innerHTML = <td>${aluno.nome}</td>
+            htmlRow.innerHTML = `<td>${aluno.nome}</td>`
             let encontrado = false
             this.materias.forEach(materia => {
                 if(materia in aluno.notas) {
@@ -40,7 +40,7 @@ class AlunoView {
                 this.materias.forEach(materia => {
                     htmlRow.innerHTML += `<td>
                     ${aluno.media[materia] !== undefined ? aluno.media[materia] : 
-                        <a href="edit.html?id=${aluno._id}">Incluir Notas</a>} </td>`
+                        `<a href="edit.html?id=${aluno._id}">Incluir Notas</a>`} </td>`
                 })
             }else{
                 htmlRow.innerHTML += `td colspan="${this.materias.length}">
@@ -56,3 +56,5 @@ class AlunoView {
     }
 
 }
+
+
