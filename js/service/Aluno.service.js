@@ -13,8 +13,21 @@ add (aluno) {
 }
 
 update(aluno) {
-    return aluno
+    if(!aluno instanceof AlunoModel) {
+        throw new Error('O aluno deve ser uma instância de alunoModel')
+    } 
+    let index = this.alunos.findIndex(a => a._id === aluno._id)
+    if (index !== -1) {
+        this.alunos[index] = aluno
+        this.updateLocalStorage()
+    }
 }
+
+
+
+
+
+
 
 searchById(id){
     return this.alunos.find(aluno => aluno._id === id)
