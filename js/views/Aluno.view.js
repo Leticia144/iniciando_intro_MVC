@@ -1,4 +1,9 @@
-class AlunoView {
+
+
+
+
+
+export class AlunoView {
     constructor(table, materias)
     {
         this.tableList = table 
@@ -27,7 +32,7 @@ class AlunoView {
         this.tableBody.innerHTML = ''
          alunos.forEach(aluno => {
             let htmlRow = document.createElement('tr')
-            htmlRow.innerHTML = `<td>${aluno.nome}</td>`
+            htmlRow.innerHTML = `<td><a href="edit.html?id=${aluno._id}">${aluno.nome}</a></td>`
             let encontrado = false
             this.materias.forEach(materia => {
                 if(materia._Id in aluno.notas) {
